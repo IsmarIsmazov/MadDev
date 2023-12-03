@@ -164,3 +164,5 @@ class UserServices:
         return {"id": user.id,
                 "detail": GetLoginResponseService.get_jwt(user=user)
                 }
+
+

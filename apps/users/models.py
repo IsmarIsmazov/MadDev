@@ -1,19 +1,21 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
-from phonenumber_field.modelfields import PhoneNumberField
 
 from apps.users.manager import CustomUserManager
+from apps.users.utils.validators import PhoneValidator
 
 
 # Create your models here.
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=40)
-    phone_number = PhoneNumberField(unique=True)
+    phone_number = models.CharField(
+        "Телефон", validators=[PhoneValidator], unique=True, max_length=15
+    )
     is_staff = models.BooleanField(default=False)
     date_of_birth = models.DateField(null=True)
     is_active = models.BooleanField(default=True)
 
-    object = CustomUserManager()
+    objects = CustomUserManager()
 
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = ['username']

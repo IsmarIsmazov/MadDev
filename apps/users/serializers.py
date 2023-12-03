@@ -13,7 +13,7 @@ class SignUpSerializer(ModelSerializer):
         return ValidateAuthenticate.validate_password(value)
 
     def validate_phone(self, value):
-        queryset = CustomUser.object.all()
+        queryset = CustomUser.objects.all()
         return ValidateAuthenticate.validate_phone(value, queryset)
 
     def create(self, validated_data):
@@ -31,7 +31,7 @@ class SignUpSerializer(ModelSerializer):
 
 
 class LoginSerializer(serializers.Serializer):
-    phone_number = PhoneNumberField()
+    phone_number = serializers.CharField()
     password = serializers.CharField(write_only=True)
     access_token = serializers.CharField(read_only=True)
     refresh_token = serializers.CharField(read_only=True)
