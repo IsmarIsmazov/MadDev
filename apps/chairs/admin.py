@@ -20,5 +20,3 @@ class ChairAdmin(admin.ModelAdmin):
     list_filter = ['category', 'country', 'in_stock', 'pickup', 'delivery']
     search_fields = ['title', 'category__name', 'country']
     date_hierarchy = 'created'
-
-admin.site.site_title = "Панель управления"
