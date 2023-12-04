@@ -16,6 +16,7 @@ class MaterialSerializer(serializers.ModelSerializer):
 
 
 class ChairSerializer(serializers.ModelSerializer):
+    created = serializers.DateTimeField(format="%d-%m-%YT%H:%M:%SZ", read_only=True)
     material = MaterialSerializer(many=True)
     category = CategorySerializer()
 

@@ -11,7 +11,7 @@ INSTALL_LIBRARY = [
     'phonenumbers',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
-
+    'django_filters',
 ]
 
 DJANGO_APPS = [

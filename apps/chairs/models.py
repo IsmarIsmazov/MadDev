@@ -1,4 +1,7 @@
 from django.db import models
+from decimal import Decimal
+
+from django.db.models.signals import post_save
 
 from .constants import country_choices
 
@@ -7,7 +10,7 @@ from .constants import country_choices
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, verbose_name='Название')
 
     def __str__(self):
         return self.name
@@ -29,6 +32,10 @@ class Material(models.Model):
 
 
 class Chair(models.Model):
+    price = models.DecimalField(max_digits=10, decimal_places=2, verbose_name="Цена")
+    discount = models.IntegerField(default=0, blank=True, null=True, verbose_name="Скидка")
+    discounted_price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True,
+                                           verbose_name="Цена со скидкой")
     title = models.CharField(max_length=100, verbose_name="Название")
     width = models.IntegerField(default=0, verbose_name="Ширина")
     height = models.IntegerField(default=0, verbose_name="Высота")
@@ -39,6 +46,7 @@ class Chair(models.Model):
     in_stock = models.BooleanField(verbose_name="В наличии")
     pickup = models.BooleanField(verbose_name="Самовывоз")
     delivery = models.BooleanField(verbose_name="Доставка")
+    created = models.DateTimeField(auto_now_add=True, verbose_name="Дата создания")
 
     def __str__(self):
         return self.title
@@ -46,3 +54,4 @@ class Chair(models.Model):
     class Meta:
         verbose_name = 'Стул'
         verbose_name_plural = "Стулья"
+
