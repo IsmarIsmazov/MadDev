@@ -2,14 +2,14 @@ JAZZMIN_SETTINGS = {
     "site_title": "MadDev",
     "site_header": "MadDev",
     "site_brand": "MadDev",
-    "welcome_sign": "Welcome to MadDev",
+    "welcome_sign": "Добро пожаловать в MadDev",
     "copyright": "MadDev",
     "search_model": ["auth.User", "auth.Group"],
     "show_ui_builder": True,
     "topmenu_links": [
-        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "Главная", "url": "admin:index", "permissions": ["auth.view_user"]},
         {"model": "auth.User"},
-        {"name": "Support", "url": "https://t.me/Savadatsu", "new_window": True},
+        {"name": "Поддержка", "url": "https://t.me/Savadatsu", "new_window": True},
     ],
     "show_sidebar": True,
     "default_icon_parents": "fas fa-circle",
@@ -49,5 +49,5 @@ JAZZMIN_UI_TWEAKS = {
         "warning": "btn-warning",
         "danger": "btn-danger",
         "success": "btn-success"
-    }
+    },
 }
