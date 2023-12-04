@@ -34,7 +34,7 @@ class Authenticate:
             return Response(data=response, status=status.HTTP_200_OK)
         else:
             return Response(
-                data={"message": "Invalid email or password"},
+                data={"message": "Invalid phone number or password"},
                 status=status.HTTP_401_UNAUTHORIZED
             )
 

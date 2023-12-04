@@ -18,10 +18,9 @@ class CategoryViewSet(mixins.ListModelMixin, GenericViewSet):
     serializer_class = CategorySerializer
 
 
+# ------------------------------------------------------------------------------------------------------------------
 """ВИДЫ КАТЕГОРИИ"""
 
-
-# ------------------------------------------------------------------------------------------------------------------
 
 class ChairOfficeViewSet(mixins.ListModelMixin, GenericViewSet):
     queryset = Chair.objects.filter(category__name='Стулья офисные')

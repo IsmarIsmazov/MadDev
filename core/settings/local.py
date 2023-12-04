@@ -1,6 +1,7 @@
 CREATED_APP = [
     'apps.chairs',
     'apps.users',
+    'apps.saving',
 ]
 
 INSTALL_LIBRARY = [
