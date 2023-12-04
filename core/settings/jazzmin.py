@@ -19,6 +19,13 @@ JAZZMIN_SETTINGS = {
         "auth.user": "collapsible",
         "auth.group": "vertical_tabs",
     },
+    "icons": {
+        "chairs.Category": "fas fa-list-alt",
+        "chairs.Material": "fas fa-cube",
+        "chairs.Chair": "fas fa-chair",
+        "users.CustomUser": "fas fa-users",
+    },
+
 }
 JAZZMIN_UI_TWEAKS = {
     "navbar_small_text": True,
