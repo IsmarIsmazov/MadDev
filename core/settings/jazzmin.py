@@ -24,6 +24,7 @@ JAZZMIN_SETTINGS = {
         "chairs.Material": "fas fa-cube",
         "chairs.Chair": "fas fa-chair",
         "users.CustomUser": "fas fa-users",
+        "auth.Group": "fas fa-users"
     },
 
 }
