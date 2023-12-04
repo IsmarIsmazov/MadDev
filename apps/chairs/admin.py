@@ -19,4 +19,4 @@ class ChairAdmin(admin.ModelAdmin):
                     'in_stock', 'pickup', 'delivery', 'created']
     list_filter = ['category', 'country', 'in_stock', 'pickup', 'delivery']
     search_fields = ['title', 'category__name', 'country']
-    date_hierarchy = 'created'
+    list_per_page = 20
