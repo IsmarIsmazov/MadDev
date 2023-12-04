@@ -12,5 +12,9 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
+        representation_chair = {
+            'name_chair': instance.chair.title
+        }
         representation['user'] = instance.user.username
+        representation.update(representation_chair)
         return representation
