@@ -1,16 +1,11 @@
-from django.shortcuts import render
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter
-from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet, GenericViewSet
 from rest_framework import mixins
 
 from .filters import ChairFilter
-from .models import Category, Chair, Material
+from .models import Category, Chair
 from .serializers import ChairSerializer, CategorySerializer
-
-
-# Create your views here.
 
 
 class ChairViewSet(ModelViewSet):
@@ -19,6 +14,7 @@ class ChairViewSet(ModelViewSet):
     filter_backends = [DjangoFilterBackend, OrderingFilter]
     filterset_class = ChairFilter
     ordering_fields = ["created", "price"]
+
 
 class CategoryViewSet(mixins.ListModelMixin, GenericViewSet):
     queryset = Category.objects.all()
@@ -33,7 +29,6 @@ class CategoryViewSet(mixins.ListModelMixin, GenericViewSet):
 class ChairOfficeViewSet(mixins.ListModelMixin, GenericViewSet):
     queryset = Chair.objects.filter(category__name='Стулья офисные')
     serializer_class = ChairSerializer
-
 
 
 class ArmchairOfficeViewSet(mixins.ListModelMixin, GenericViewSet):

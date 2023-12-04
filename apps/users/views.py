@@ -10,7 +10,6 @@ from apps.users.utils.permissions import IsUnregistered
 from apps.users.utils.service import Authenticate, UserServices
 
 
-# Create your views here.
 class SignUpView(mixins.CreateModelMixin, viewsets.GenericViewSet):
     queryset = CustomUser.objects.all()
     serializer_class = SignUpSerializer

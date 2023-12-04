@@ -1,12 +1,6 @@
 from django.db import models
-from decimal import Decimal
-
-from django.db.models.signals import post_save
 
 from .constants import country_choices
-
-
-# Create your models here.
 
 
 class Category(models.Model):
@@ -54,4 +48,3 @@ class Chair(models.Model):
     class Meta:
         verbose_name = 'Стул'
         verbose_name_plural = "Стулья"
-

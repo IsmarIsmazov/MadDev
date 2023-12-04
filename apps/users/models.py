@@ -4,8 +4,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from apps.users.manager import CustomUserManager
 from apps.users.utils.validators import PhoneValidator
 
-
-# Create your models here.
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=40)
     phone_number = models.CharField(
